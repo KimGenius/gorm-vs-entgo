@@ -8,14 +8,16 @@ import (
 
 type Store struct {
 	gorm.Model
-	Name      string `json:"name"`
-	OwnerName string `json:"ownerName"`
+	Name      string  `json:"name"`
+	OwnerName string  `json:"ownerName"`
+	Items     []*Item `json:"items"`
 }
 
 type Item struct {
 	gorm.Model
-	Name  string `json:"name"`
-	Price uint   `json:"price"`
+	Name    string `json:"name"`
+	Price   uint   `json:"price"`
+	StoreID uint   `json:"storeId"`
 }
 
 func main() {
